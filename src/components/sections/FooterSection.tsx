@@ -7,11 +7,11 @@ const FooterSection: React.FC = () => {
       <div className="container mx-auto text-center">
         {/* Penyesuaian ukuran teks untuk copyright */}
         <p className="text-sm md:text-base text-muted-foreground mb-2">
-          Copyright © 2025 <span className="text-primary font-semibold">Yogz Creative</span>
+          Copyright © 2025 <span className="text-primary font-semibold">Jaspem Studios</span>
         </p>
         {/* Penyesuaian ukuran teks untuk keterangan */}
         <p className="text-xs md:text-sm text-muted-foreground/70">
-          Powered by Professional Web Development Services
+          Powered by Tilu Pilar Pemrograman
         </p>
       </div>
     </footer>

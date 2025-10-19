@@ -1,74 +1,104 @@
 import React from 'react';
-import { GitBranch, Palette, Rocket, CheckSquare, Sparkles } from 'lucide-react';
+import { GitBranch, Palette, Rocket, CheckSquare, Sparkles, Zap } from 'lucide-react';
 
+// Data Langkah Kerja (Workflow Steps)
 const steps = [
-    { icon: GitBranch, title: "1. Konsultasi & Strategi", description: "Kami mendengarkan kebutuhan bisnis Anda dan merancang blueprint fungsional website." },
-    { icon: Palette, title: "2. Desain & Mockup", description: "Pembuatan wireframe dan desain visual (UI/UX) yang disesuaikan dengan brand Anda." },
-    { icon: Rocket, title: "3. Development & Coding", description: "Proses coding cepat, bersih (Clean Code), dan dioptimasi penuh untuk performa." },
-    { icon: CheckSquare, title: "4. Testing & Launching", description: "Pengujian menyeluruh (QA) sebelum website siap diluncurkan (Go Live) di domain Anda." },
+    { 
+        icon: GitBranch, 
+        title: "1. Konsultasi & Strategi", 
+        description: "Kami menganalisis tujuan bisnis, merumuskan peta jalan, dan menyusun blueprint fungsional untuk website yang siap konversi." 
+    },
+    { 
+        icon: Palette, 
+        title: "2. Desain Eksklusif (UI/UX)", 
+        description: "Pembuatan wireframe dan desain visual yang menawan, mobile-first, dan sesuai dengan identitas (brand identity) unik perusahaan Anda." 
+    },
+    { 
+        icon: Rocket, 
+        title: "3. Development & Coding Cepat", 
+        description: "Implementasi desain ke dalam kode (React/Vite) yang bersih, SEO-friendly, dan dioptimasi penuh untuk kecepatan loading maksimal." 
+    },
+    { 
+        icon: CheckSquare, 
+        title: "4. Pengujian & Go Live", 
+        description: "Pengujian fungsionalitas dan keamanan secara menyeluruh (Quality Assurance) sebelum website Anda siap diluncurkan dan beroperasi penuh." 
+    },
 ];
 
 const TechWorkflowSection: React.FC = () => {
 
     return (
-        // Penyesuaian padding vertikal untuk mobile/desktop
-        <section className="py-16 md:py-24 px-4 bg-secondary/30">
-            <div className="container mx-auto">
-                <div className="text-center mb-10 md:mb-16">
-                    {/* Badge (DIPERTAHANKAN) */}
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-                        <Sparkles className="h-4 w-4 text-primary" />
-                        <span className="text-sm font-medium text-primary">Transparansi Proses</span>
+        // Menggunakan padding vertikal yang lebih besar
+        <section className="py-20 md:py-32 px-4 bg-background relative overflow-hidden">
+            
+            {/* Background Effect - Lebih terpusat */}
+            <div className="absolute inset-0">
+                <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[180px] transform -translate-x-1/2 -translate-y-1/2 animate-pulse-slow"></div>
+            </div>
+
+            <div className="container mx-auto relative z-10">
+                <div className="text-center mb-12 md:mb-20">
+                    {/* Badge */}
+                    <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 animate-fade-in-down transition-colors duration-300 hover:bg-primary/20 cursor-pointer">
+                        <Zap className="h-4 w-4 text-primary" />
+                        <span className="text-sm font-medium text-primary">Proses Kerja Cerdas</span>
                     </div>
-                    {/* Judul Utama - Penyesuaian ukuran teks untuk mobile/desktop */}
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-                        Alur Kerja Kami
+                    {/* Judul Utama - Lebih mencolok */}
+                    <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight animate-fade-in-down" style={{ animationDelay: '0.2s' }}>
+                        Alur <span className="bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent">Proyek</span> Kami
                     </h2>
-                    {/* Deskripsi - Penyesuaian ukuran teks untuk mobile/desktop */}
-                    <p className="text-muted-foreground max-w-3xl mx-auto text-base md:text-lg">
-                        Kami menjamin proses yang transparan, terstruktur, dan berorientasi hasil.
+                    {/* Deskripsi - Responsive Font Size */}
+                    <p className="text-muted-foreground max-w-3xl mx-auto text-base md:text-xl animate-fade-in" style={{ animationDelay: '0.4s' }}>
+                        Proses yang transparan dan terstruktur. Kami selalu memastikan komunikasi lancar di setiap tahapan.
                     </p>
                 </div>
                 
-                {/* Timeline Container */}
-                <div className="relative">
-                    {/* Vertical Line - Hanya terlihat di desktop */}
-                    <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-border/50 transform -translate-x-1/2"></div>
-
-                    {/* Timeline Items */}
-                    <div className="space-y-12 md:space-y-16">
-                        {steps.map((step, index) => (
-                            // Penyesuaian tata letak grid untuk mobile/desktop
+                {/* Timeline Container (Grid Dinamis dengan Efek Jarak) */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                    
+                    {steps.map((step, index) => (
+                        <div 
+                            key={index} 
+                            // Wrapper Group untuk Hover effect & Staggered Animation
+                            className="group animate-fade-in-up" 
+                            style={{ animationDelay: `${0.6 + index * 0.2}s` }}
+                        >
+                            {/* Card Langkah - Full Animasi Hover */}
                             <div 
-                                key={index} 
-                                className={`flex relative items-center ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'} ${index < steps.length - 1 ? 'border-l border-border/50 md:border-none ml-6 pl-4 md:ml-0 md:pl-0' : 'border-none ml-6 pl-4 md:ml-0 md:pl-0'}`}
+                                // Tailwind Classes untuk Animasi, Border & Shadow Kuat
+                                className="p-6 sm:p-8 bg-gradient-card rounded-2xl border border-border/50 shadow-xl shadow-primary/5 flex flex-col h-full transition-all duration-500 ease-in-out transform 
+                                hover:translate-y-[-10px] 
+                                hover:shadow-glow-strong 
+                                hover:border-cyan-400/70 
+                                cursor-pointer relative"
                             >
-                                {/* Konten Card */}
-                                <div 
-                                    className={`relative w-full ${index % 2 === 0 ? 'md:max-w-[45%]' : 'md:max-w-[45%]'} ${index % 2 === 0 ? 'md:col-start-1 md:text-right' : 'md:col-start-2 md:text-left'}`}
-                                >
-                                    {/* Circle Marker - Hanya terlihat di desktop */}
-                                    <div 
-                                        className={`hidden md:flex w-12 h-12 rounded-full bg-primary/80 border-4 border-background items-center justify-center flex-shrink-0 absolute top-0 ${index % 2 === 0 ? 'md:right-0 md:translate-x-1/2' : 'md:left-0 md:-translate-x-1/2'}`}
-                                    >
-                                        <step.icon className="h-6 w-6 text-primary-foreground" />
-                                    </div>
-
-                                    {/* Content Card - Penyesuaian padding dan ukuran teks untuk mobile */}
-                                    <div className="p-5 sm:p-6 bg-gradient-card rounded-xl border border-border/50 shadow-md w-full md:w-auto flex-grow transition-all duration-300 hover:shadow-xl hover:border-primary/50">
-                                        {/* Icon di Mobile (Menggantikan circle di desktop) */}
-                                        <div className="md:hidden w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-primary/20 flex items-center justify-center mb-3">
-                                            <step.icon className="h-5 w-5 text-primary" />
-                                        </div>
-                                        {/* Ukuran Teks Judul */}
-                                        <h3 className="text-lg sm:text-xl font-bold mb-2">{step.title}</h3>
-                                        {/* Ukuran Teks Deskripsi */}
-                                        <p className="text-sm sm:text-base text-muted-foreground">{step.description}</p>
+                                
+                                {/* Efek Bawaan di Sudut (Nomor Langkah) */}
+                                <div className="absolute top-0 right-0 p-3">
+                                    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-primary/80 to-cyan-400/80 text-white font-bold text-xl opacity-80 transition-all duration-500 group-hover:opacity-100 group-hover:scale-110">
+                                        0{index + 1}
                                     </div>
                                 </div>
+
+                                {/* Icon Utama - Di Sisi Kiri Atas */}
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 border-2 border-primary/50 transition-all duration-300 group-hover:bg-primary/30 group-hover:scale-105">
+                                        <step.icon className="h-7 w-7 text-primary transition-colors duration-300 group-hover:text-cyan-400" />
+                                    </div>
+                                </div>
+                                
+                                {/* Judul */}
+                                <h3 className="text-2xl font-extrabold text-foreground mb-3 transition-colors duration-300 group-hover:text-primary">
+                                    {step.title}
+                                </h3>
+
+                                {/* Deskripsi - Responsive Font Size */}
+                                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mt-auto">
+                                    {step.description}
+                                </p>
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

@@ -48,16 +48,16 @@ const PricingSection: React.FC = () => {
           </p>
         </div>
 
-        <Tabs defaultValue="landing" className="mb-12">
+        <Tabs defaultValue="toko" className="mb-12">
           {/* Tabs List */}
           <TabsList className="justify justify-grid w-full grid-cols-2 md:grid-cols-4 lg:grid-cols-7 mb-12 bg-secondary/50 backdrop-blur-sm p-1 rounded-xl border border-border/50">
-            <TabsTrigger value="landing" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary/20 data-[state=active]:to-cyan-400/20 data-[state=active]:text-primary">Landing Page</TabsTrigger>
+            <TabsTrigger value="toko" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary/20 data-[state=active]:to-cyan-400/20 data-[state=active]:text-primary">Toko Online</TabsTrigger>
             <TabsTrigger value="company" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary/20 data-[state=active]:to-cyan-400/20 data-[state=active]:text-primary">Company Profile</TabsTrigger>
             <TabsTrigger value="travel" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary/20 data-[state=active]:to-cyan-400/20 data-[state=active]:text-primary">Travel & Tour</TabsTrigger>
           </TabsList>
 
           {/* Toko Online Content */}
-          <TabsContent value="landing">
+          <TabsContent value="toko">
             <div className="grid md:grid-cols-3 gap-8">
               {/* Starter Package */}
               <Card className="p-8 bg-gradient-card border-primary/20 hover:border-primary/50 transition-all relative overflow-hidden group">
@@ -67,7 +67,7 @@ const PricingSection: React.FC = () => {
                   <p className="text-sm text-muted-foreground mb-6">Perfect untuk pemula</p>
                   <div className="text-4xl font-bold mb-8">
                     <span className="text-2xl text-muted-foreground">Rp</span>{" "}
-                    <span className="bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent">2.500.000</span>
+                    <span className="bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent">1.500.000</span>
                   </div>
                   <ul className="space-y-4 mb-8">
                     <FeatureListItem>Free Domain (.com)</FeatureListItem>
@@ -97,11 +97,11 @@ const PricingSection: React.FC = () => {
                   ⭐ Terpopuler
                 </div>
                 <div className="relative z-10">
-                  <h3 className="text-3xl font-bold mb-2 text-foreground">Growth</h3>
+                  <h3 className="text-3xl font-bold mb-2 text-foreground">Gold</h3>
                   <p className="text-sm text-foreground/80 mb-6">Paling banyak dipilih</p>
                   <div className="text-4xl font-bold mb-8">
                     <span className="text-2xl text-foreground/70">Rp</span>{" "}
-                    <span className="text-foreground">6.000.000</span>
+                    <span className="text-foreground">2.300.000</span>
                   </div>
                   <ul className="space-y-4 mb-8">
                     <FeatureListItem isFeatured={true}>Semua yang ada di Starter, plus:</FeatureListItem>
@@ -128,11 +128,11 @@ const PricingSection: React.FC = () => {
               <Card className="p-8 bg-gradient-card border-primary/20 hover:border-primary/50 transition-all relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-shine opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative z-10">
-                  <h3 className="text-3xl font-bold mb-2 text-foreground">Ultimate</h3>
+                  <h3 className="text-3xl font-bold mb-2 text-foreground">Diamond</h3>
                   <p className="text-sm text-muted-foreground mb-6">Solusi lengkap enterprise</p>
                   <div className="text-4xl font-bold mb-8">
                     <span className="text-2xl text-muted-foreground">Rp</span>{" "}
-                    <span className="bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent">12.000.000</span>
+                    <span className="bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent">5.500.000</span>
                   </div>
                   <ul className="space-y-4 mb-8">
                     <FeatureListItem>Semua yang ada di Growth, plus:</FeatureListItem>
